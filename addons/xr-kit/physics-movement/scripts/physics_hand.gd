@@ -403,7 +403,7 @@ class PIDController:
 		proportional = error
 		proportional.limit_length(proportional_limit)
 		integral += error * delta
-		integral.limit_length(integral_limit)
+		integral = integral.limit_length(integral_limit)
 		derivative = (error - previous_error) / delta
 		derivative.limit_length(derivative_limit)
 		previous_error = error
